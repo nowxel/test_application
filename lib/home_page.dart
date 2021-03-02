@@ -14,8 +14,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    int number = 0;
-
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
