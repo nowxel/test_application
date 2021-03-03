@@ -35,9 +35,9 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
             children:[
-              if (i == 0) Text(''),
-              if (i == 1) Text('Left'),
-              if (i == 2) Text('Right'),
+              SizedBox(
+                height: 10.0,
+              ),
               Row(
                 children: [
                   IconButton(
@@ -51,6 +51,24 @@ class _MyHomePageState extends State<MyHomePage> {
                     onPressed: () => _changeState(2),
                   ),
                 ],
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              if (i == 0) Text(''),
+              if (i == 1) Text(
+                'You picked left image',
+                style: TextStyle(
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              if (i == 2) Text(
+                'You picked right image',
+                style: TextStyle(
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
 
             ]
