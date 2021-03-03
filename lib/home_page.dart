@@ -11,6 +11,20 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+  int i;
+
+  @override
+  void initState() {
+    super.initState();
+    i = 0;
+  }
+
+  _changeState(int s) {
+    setState(() {
+      i = s;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -19,23 +33,26 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Row(
+        child: Column(
             children:[
-              IconButton(
-                icon: Image.asset('images/Left.jpg'),
-                iconSize: 180,
-                onPressed: () {
-                  print('You pressed on left picture');
-                },
+              if (i == 0) Text(''),
+              if (i == 1) Text('Left'),
+              if (i == 2) Text('Right'),
+              Row(
+                children: [
+                  IconButton(
+                    icon: Image.asset('images/Left.jpg'),
+                    iconSize: 180,
+                    onPressed: () => _changeState(1),
+                  ),
+                  IconButton(
+                    icon: Image.asset('images/Right.jpg'),
+                    iconSize: 180,
+                    onPressed: () => _changeState(2),
+                  ),
+                ],
               ),
-              IconButton(
-                icon: Image.asset('images/Right.jpg'),
-                iconSize: 180,
-                onPressed: () {
-                  Text("Left");
-                  print('You pressed on right picture');
-                },
-              ),
+
             ]
         ),
       ),
