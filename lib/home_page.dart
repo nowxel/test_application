@@ -22,20 +22,20 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Row(
             children:[
               IconButton(
-                icon: Image.asset('images/ATM.png'),
+                icon: Image.asset('images/Left.jpg'),
                 iconSize: 180,
                 onPressed: () {
                   print('You pressed on left picture');
                 },
               ),
               IconButton(
-                icon: Image.asset('images/ATM.png'),
+                icon: Image.asset('images/Right.jpg'),
                 iconSize: 180,
                 onPressed: () {
+                  Text("Left");
                   print('You pressed on right picture');
                 },
               ),
-              Text("")
             ]
         ),
       ),
